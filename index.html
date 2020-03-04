@@ -1,3 +1,430 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <title>Stonrstory | Shoppa smycken</title>
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            width: 100%;
+            display: flex;
+        }
+
+        #container {
+            flex: 1;
+            height: 100% auto;
+            position: relative;
+        }
+
+
+        #signbasket {
+
+            height: 50px;
+            color: darkgoldenrod;
+            overflow: hidden;
+            padding-inline-end: 5px;
+        }
+
+
+        #nav1 ul li {
+            float: right;
+            list-style: none;
+            margin-right: 80px;
+
+        }
+
+        #header {
+
+            width: 100%;
+            height: 140px;
+            overflow: hidden;
+
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-left: 60px;
+
+        }
+
+        nav {
+            color: darkgoldenrod;
+            position: relative;
+
+        }
+
+        #nav2 ul li {
+            float: left;
+            list-style: none;
+            padding: 20px;
+        }
+
+        nav ul li img {
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: darkgoldenrod;
+        }
+
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: darkolivegreen;
+        }
+
+        #pictureroller {
+            width: 80%;
+            height: 400px;
+            margin-left: 10%;
+            border: 2px solid black;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #ul_img {
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            transition: all 2s;
+        }
+
+        .li_img {
+            width: 100%;
+            height: 100%;
+            float: left;
+            list-style: none;
+
+
+        }
+
+        #productgallery {
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 8px;
+            box-sizing: border-box;
+            height: 1100px;
+
+        }
+
+        figure.item {
+            width: 24%;
+            height: 250px;
+            margin: 3px;
+            float: left;
+        }
+
+        figure.item img {
+            width: 100%;
+            padding: 2px;
+            height: 80%;
+            overflow: hidden;
+        }
+
+        figure.item img:hover {
+            opacity: 0.8;
+        }
+
+        figcaption {
+            padding: 10px;
+            text-align: center;
+
+        }
+
+
+        footer {
+
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            padding: 5px;
+
+        }
+
+        #newsletter {
+            padding: 5px;
+
+        }
+
+
+        button {
+            background-color: burlywood;
+            font-size: medium;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="signbasket">
+            <nav id="nav1">
+                <ul>
+
+                    <li> <img src="./images/icon varukorg.jpg" alt="varukorg">Varukorg</li>
+                    <li><img src="./images/icon meddlem.jpg" alt="logga in">Logga in</li>
+                </ul>
+
+
+            </nav>
+        </div>
+        <hr>
+        <div id="header">
+
+            <nav id="nav2">
+                <ul>
+                    <li>
+                        <h1>StoneStory</h1>
+                    </li>
+                    <li> Smycken</li>
+                    <li> Inspiration</li>
+                    <li> Om mig</li>
+                    <li>
+                        <form id="search_form">
+                            <input type="text" id="txt" placeholder="Sök produkter">
+                             <button type="submit" id="search"> Sök </button>
+                    </li>
+                    </form>
+                </ul>
+            </nav>
+
+        </div>
+
+        <hr>
+
+        <div id="pictureroller">
+
+            <ul id="ul_img">
+                <li class="li_img"> <img src="./images/Modellen bilder1.jpg" alt="smycken på modellen"></li>
+                <li class="li_img"> <img src="./images/Modellen bilder.jpg" alt="smycken på modellen"></li>
+                <li class="li_img"> <img src="./images/Modellen bilder2.jpg" alt="smycken på modellen"></li>
+
+            </ul>
+        </div>
+
+        <hr>
+
+        <div id="productgallery">
+
+            <figure class="item">
+                <img src="images/Pendant3.JPG" alt="Hängsmycke">
+
+                <figcaption>
+                    <button class="order"> Köp</button>
+                </figcaption>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Pendant4.JPG" alt="Hängsmycke">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Pentant1.JPG" alt="Hängsmycke">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Pendant2.JPG" alt="Hängsmycke">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Ring1.jpg" alt="Ring">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Ring2.jpg" alt="Ring">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+            <figure class="item">
+                <img src="images/Ring3.jpg" alt="Ring">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Ring4.jpg" alt="Ring">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Earring1.JPG" alt="Örhänger">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Earring2.jpg" alt="Örhänger">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+            </figure>
+            <figure class="item">
+                <img src="images/Earring3.JPG" alt="Örhänger">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Earring4.JPG" alt="Örhänger">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+            </figure>
+            <figure class="item">
+                <img src="images/Bracelet1.JPG" alt="Armband">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Bracelet2.JPG" alt="Armband">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+            </figure>
+            <figure class="item">
+                <img src="images/Bracelet3.JPG" alt="Armband">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+
+            <figure class="item">
+                <img src="images/Bracelet4.JPG" alt="Armband">
+
+                <figcaption>
+                    <button class="order">Köp</button>
+                </figcaption>
+            </figure>
+            </figure>
+        </div>
+
+        <hr>
+
+        <footer>
+
+            <div id="newsletter">
+                <label for=""> Nyhetsbrev</label>
+                <input type="email" placeholder="Ange din e-postaddress">
+                <button type="submit" id=" nmail"> Anmäl</button>
+            </div>
+
+            <p>Copyright@2020 StoneStory</p>
+
+        </footer>
+    </div>
+
+    <script>
+        /*variabler
+        ________________________________________*/
+        var search = document.querySelector("search");
+        var nmail = document.querySelector("nmail");
+        var pictureroller = document.querySelector("#pictureroller");
+        var li_img = pictureroller.querySelectorAll("li_img");
+        var index = 0;
+        var timer = null;
+
+        /*händelselyssnare
+        ________________________________________*/
+
+        namil.addEventListener("click", function () {
+           
+            console.log("nmail", nmail);
+           
+
+        })
+
+        
+
+                /*bildrollare
+                ________________________________________*/
+                //bilderna växlar automat
+                function autoPlay() {
+                    if (++index >= imglist.length) {
+                        index = 0
+                    };
+                    changeImg(index);
+                }
+                //mousen på bilderna ,stoppa växla      
+                pictureroller.onmouseover = function () {
+                    clearInterval(timer);
+                }
+                //mousen av bilderna ,växlar automat igen      
+                pictureroller.οnmοuseοut = function () {
+
+                    timer = setInterval(autoPlay, 3000);
+                }
+
+                timer = setInterval(autoPlay, 3000);
+
+
+                function changeImg(curIndex) {
+                    for (var i = 0; i < imglist.length; i++) {
+                        imglist[i].style.display = "none";
+
+                    }
+
+                    imglist[curIndex].style.display = "block";
+
+                }
+    </script>
+</body>
 
 </html>
+
+
+
