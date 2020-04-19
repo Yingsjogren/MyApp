@@ -53,13 +53,30 @@
             margin-left: 60px;
 
         }
+        h1 a{
+            
+            text-decoration: none;
+        }
 
         nav {
             color: darkgoldenrod;
             position: relative;
 
         }
+        nav .subgav{
+            display: none; 
+                           
+        }
+        nav li:hover .subgav{          
+            display: block;           
+            }
 
+      
+        nav .subgav li:hover{
+            background:pink;
+            }
+
+       
         #nav2 ul li {
             float: left;
             list-style: none;
@@ -76,13 +93,14 @@
             text-decoration: none;
             color: darkgoldenrod;
         }
-
+       
 
         nav ul li a:hover {
-            text-decoration: underline;
-            color: darkolivegreen;
+            text-decoration: none;
+            color: rgb(109, 153, 34);
         }
-
+        
+       
         #pictureroller {
             width: 80%;
             height: 400px;
@@ -106,6 +124,9 @@
             list-style: none;
 
 
+        }
+        #login{
+           text-align: center;
         }
 
         #productgallery {
@@ -174,8 +195,8 @@
             <nav id="nav1">
                 <ul>
 
-                    <li> <img src="./images/icon varukorg.jpg" alt="varukorg">Varukorg</li>
-                    <li><img src="./images/icon meddlem.jpg" alt="logga in">Logga in</li>
+                    <li> <img src="./images/icon varukorg.jpg" alt="varukorg"><a href="">Varukorg</a></li>
+                    <li><img src="./images/icon meddlem.jpg" alt="logga in"> <a href="login.html">Logga in</a></li>
                 </ul>
 
 
@@ -187,15 +208,25 @@
             <nav id="nav2">
                 <ul>
                     <li>
-                        <h1>StoneStory</h1>
+                        <h1> <a href="index.html">StoneStory</a> </h1>
                     </li>
-                    <li> Smycken</li>
-                    <li> Inspiration</li>
-                    <li> Om mig</li>
+                    <li>
+                        <a href="">Smycken</a> 
+                    <ul class= "subgav">
+                        <li><a href="">Hängsmycke</a></li>
+                        <li><a href="">Örhänger</a></li>
+                        <li><a href="">Ring</a></li>
+                        <li><a href="">Armband</a></li>
+                    </ul>
+                    
+                    </li>
+
+                    <li> <a href="">Inspiration</a></li>
+                    <li> <a href="">Om mig</a> </li>
                     <li>
                         <form id="search_form">
                             <input type="text" id="txt" placeholder="Sök produkter">
-                             <button type="submit" id="search"> Sök </button>
+                            <button type="submit" id="search"> Sök </button>
                     </li>
                     </form>
                 </ul>
@@ -371,54 +402,78 @@
         ________________________________________*/
         var search = document.querySelector("search");
         var nmail = document.querySelector("nmail");
+
+
         var pictureroller = document.querySelector("#pictureroller");
         var li_img = pictureroller.querySelectorAll("li_img");
-        var index = 0;
         var timer = null;
+        var currentIndex = 1; //当前索引
+
+
+
+
+
+
+
+
 
         /*händelselyssnare
         ________________________________________*/
 
         namil.addEventListener("click", function () {
-           
+
             console.log("nmail", nmail);
-           
+
 
         })
 
-        
 
-                /*bildrollare
-                ________________________________________*/
-                //bilderna växlar automat
-                function autoPlay() {
-                    if (++index >= imglist.length) {
-                        index = 0
-                    };
-                    changeImg(index);
-                }
-                //mousen på bilderna ,stoppa växla      
-                pictureroller.onmouseover = function () {
+
+        /*bildrollare
+        ________________________________________*/
+        //bilderna växlar automat
+
+
+        window.onload = function () {
+                var everyTime = 2000; //轮播的间隔时间
+                var firstDom = slide.firstElementChild.cloneNode(true);
+                var lastDom = slide.lastElementChild.cloneNode(true);
+                slide.appendChild(firstDom);
+                slide.insertBefore(lastDom, slide.firstElementChild);
+                slide.style.left = -width + 'px';
+
+
+                autoPlay(everyTime); //页面打开后自动开启播放
+                //当有鼠标划过时停止定时器
+                pictureroller.onmouseenter = function () {
                     clearInterval(timer);
+                };
+                //鼠标摞开时启动定时器
+                pictureroller.onmouseleave = function () {
+                    autoPlay(everyTime);
+                };
+
+                //自动播放
+                function autoPlay(period) {
+                    timer = setInterval(function () {
+                        currentIndex++;
+                        //当移动到最后一张，也就是模拟的第一张
+                        if (currentIndex == slideLength - 1) {
+                            //首先清除原先的定时器
+                            clearInterval(timer);
+                            //处理临界情况
+                            criticality(1);
+                            //通次继续下一次轮播
+                            return autoPlay(period);
+                        } else {
+                            if (currentIndex < slideLength - 1) {
+                                play(-(width * currentIndex), currentIndex);
+                            }
+                        }
+                    }, period)
                 }
-                //mousen av bilderna ,växlar automat igen      
-                pictureroller.οnmοuseοut = function () {
+        }      
 
-                    timer = setInterval(autoPlay, 3000);
-                }
-
-                timer = setInterval(autoPlay, 3000);
-
-
-                function changeImg(curIndex) {
-                    for (var i = 0; i < imglist.length; i++) {
-                        imglist[i].style.display = "none";
-
-                    }
-
-                    imglist[curIndex].style.display = "block";
-
-                }
     </script>
 </body>
 
